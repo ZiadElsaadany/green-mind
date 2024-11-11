@@ -10,8 +10,7 @@ import '../../../../core/assets/texts.dart';
 import '../../../../core/widgets/appBar.dart';
 
 class HomeBottomNavBarScreen extends StatelessWidget {
-  const HomeBottomNavBarScreen({Key? key}) : super(key: key);
-
+  const HomeBottomNavBarScreen({super.key});
 
 
   @override

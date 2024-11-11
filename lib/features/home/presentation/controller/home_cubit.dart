@@ -12,10 +12,10 @@ class HomeCubit extends Cubit<HomeStates>{
     emit(state.copyWith(indexForBottomNavBar: index, status: HomeStatesEnum.changeIndex));
   }
   List<Widget>  screens =[
-    HomeScreenBody(),
-    HomeScreenBody(),
-    HomeScreenBody(),
-    HomeScreenBody(),
+    const HomeScreenBody(),
+    Container(),
+    Container(),
+    Container(),
   ];
 
 }

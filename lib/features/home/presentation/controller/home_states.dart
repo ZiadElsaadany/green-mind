@@ -4,7 +4,7 @@ enum HomeStatesEnum {
   initial,
   changeIndex;
 }
-extension  GetAllRainReadyTimeStatesX on HomeStates{
+extension  HomeStatesX on HomeStates{
 
   bool get isChangedIndex => status == HomeStatesEnum.changeIndex;
 }

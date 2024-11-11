@@ -12,7 +12,7 @@ class AppRoutes {
     final arguments = routeSettings.arguments;
     switch (routeSettings.name) {
       case Routes.addScore:
-        return MaterialPageRoute(builder: (c)=>BlocProvider(create:(_)=>AddScoreCubit(),child: const AddScoreScreen(),));
+        return MaterialPageRoute(builder: (c)=>const AddScoreScreen());
       case Routes.home:
         return MaterialPageRoute(
        builder: (_)=> BlocProvider(

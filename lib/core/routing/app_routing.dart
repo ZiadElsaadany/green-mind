@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:green_mind/core/routing/routes.dart';
+import 'package:green_mind/features/home/presentation/controller/home_cubit.dart';
 import 'package:green_mind/features/home/presentation/view/home_bottom_screen.dart';
-import 'package:green_mind/features/start_app/presentation/view/start_screen.dart';
 
 class AppRoutes {
   Route generateRoute(RouteSettings routeSettings) {
@@ -10,10 +11,9 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.home:
         return MaterialPageRoute(
-       builder: (_)=> const HomeBottomNavBarScreen());
-        case Routes.startApp:
-        return MaterialPageRoute(
-          builder: (_) => const StartScreen());
+       builder: (_)=> BlocProvider(
+           create: (_)=>HomeCubit(),
+           child: const HomeBottomNavBarScreen()));
       default:
         return MaterialPageRoute(builder: (_) => Container());
     }

@@ -4,6 +4,7 @@ import 'package:green_mind/core/assets/images.dart';
 import 'package:green_mind/core/assets/styles.dart';
 import 'package:green_mind/core/widgets/button_with_icon.dart';
 import 'package:green_mind/features/home/presentation/view/widgets/badges/badges_list.dart';
+import 'package:green_mind/features/home/presentation/view/widgets/challenges/challenges_list.dart';
 import 'package:green_mind/features/home/presentation/view/widgets/headline_widget.dart';
 import 'package:green_mind/features/home/presentation/view/widgets/score_card.dart';
 
@@ -29,6 +30,9 @@ class HomeScreenBody extends StatelessWidget {
 const BadgesList(),
         20.verticalSpace,
         const HeadlineWidget(title: "POPULAR CHALLENGES"),
+        6.verticalSpace,
+        const ChallengesList(),
+        16.verticalSpace,
 
 
 

@@ -18,14 +18,13 @@ class CustomBottomNavBar extends StatelessWidget {
         var cubit = context.read<HomeCubit>();
         return Container(
           margin: EdgeInsets.only(
-              left: 20.w, right: 20.w, top: 10.h, bottom: 40.h),
+              left: 20.w, right: 20.w, top: 10.h, bottom: 30.h),
           child: Stack(
             alignment: Alignment.bottomCenter,
             clipBehavior: Clip.none,
             children: [
-              // Container الرئيسي لخلفية شريط التنقل
               Container(
-                height: 60.h,
+                height: 65.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(40),
@@ -61,7 +60,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   ),
                   NavItem(
                     index: 2,
-                    icon: AppImages.badge,
+                    icon: AppImages.tennis,
                     selectedIndex: state.indexForBottomNavBar ?? 0,
                     onTap: () {
                       cubit.changeIndex(2);
@@ -110,7 +109,7 @@ class NavItem extends StatelessWidget {
         children: [
           if (isSelected)
             Container(
-              margin: EdgeInsets.only(bottom: 20.h),
+              margin: EdgeInsets.only(bottom: 10.h),
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Colors.green,
@@ -119,7 +118,7 @@ class NavItem extends StatelessWidget {
                   BoxShadow(
                     color: Colors.green.withOpacity(0.4),
                     spreadRadius: 10,
-                    blurRadius: 30,
+                    blurRadius:60,
                     offset: const Offset(0, 4),
 
                   ),

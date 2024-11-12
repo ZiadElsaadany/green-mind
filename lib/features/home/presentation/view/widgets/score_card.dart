@@ -61,9 +61,6 @@ class ScoreCard extends StatelessWidget {
                         style: AppStyles.size9BlackColorMedium,
                       ),
                       SizedBox(height: 5.h),
-
-                      // Animated Score Display
-                      // AnimatedScore(score: 55),
                       Text(
                         state.score ?? "",
                         // "20",

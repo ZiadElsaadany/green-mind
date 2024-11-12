@@ -49,6 +49,9 @@ class _AddScoreBodyState extends State<AddScoreBody> {
                     context.read<AddScoreCubit>().changeScore("");
 
                     return "Enter your score";
+                  }else if(int.parse(c.trim()) > 10) {
+                    return "The latest score is 10.";
+
                   }
                   context.read<AddScoreCubit>().changeScore(c.trim());
                   return null;

@@ -9,8 +9,7 @@ import 'package:green_mind/features/home/presentation/view/widgets/headline_widg
 import 'package:green_mind/features/home/presentation/view/widgets/score_card.dart';
 
 import '../../../../../core/assets/colors.dart';
-import 'animated_number.dart';
-import 'animated_progress.dart';
+import 'progress.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});

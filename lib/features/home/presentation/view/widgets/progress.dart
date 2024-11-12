@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:green_mind/core/assets/styles.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/assets/colors.dart';
 
-class AnimatedProgressIndicator extends StatelessWidget {
-  final double score;
-  final double maxScore;
+class CustomProgress extends StatelessWidget {
+  final int score;
 
-  const AnimatedProgressIndicator({
+  const CustomProgress({
     super.key,
     required this.score,
-    this.maxScore = 8.0,
   });
 
   @override
   Widget build(BuildContext context) {
-    // حساب النسبة المئوية بناءً على score و maxScore
-    double percent = (score / maxScore).clamp(0.0, 1.0);
 
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
         children: [
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
-                maxScore.toInt(),
+                10,
                     (index) {
-                  int currentNumber = index + 1;
-                  Color textColor = currentNumber <=score
+                  Color textColor = (index+1) <=score
                       ? AppColors.yellow
                       : Colors.black;
 
                   return Text(
-                    '$currentNumber',
-                    // style: AppTextStyles.bold30deepGreen.copyWith(color: textColor),
+                    '${index+1}',
+                    style: AppStyles.size20PrimaryColorBold.copyWith(color: textColor),
                   );
                 },
               ),
@@ -46,12 +43,12 @@ class AnimatedProgressIndicator extends StatelessWidget {
 
           LinearPercentIndicator(
             lineHeight: 15.0.h,
-            percent: percent,
+            percent:    (score / 10).clamp(0, 1),
             backgroundColor: AppColors.primaryColorOpacity,
             progressColor: AppColors.yellow,
             animation: true,
             animationDuration: 2000,
-            barRadius: const Radius.circular(8),
+            barRadius: const Radius.circular(10),
           ),
         ],
       ),

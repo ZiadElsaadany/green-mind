@@ -9,7 +9,7 @@ class AddScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
-      body: AddScoreBody(),
+      body: const AddScoreBody(),
     );
   }
 }

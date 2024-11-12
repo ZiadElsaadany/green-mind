@@ -7,7 +7,7 @@ import 'package:green_mind/features/add_score/presentation/controller/add_score_
 import 'package:green_mind/features/add_score/presentation/controller/add_score_state.dart';
 
 import '../../../../../core/assets/images.dart';
-import 'animated_number.dart';
+import 'progress.dart';
 
 class ScoreCard extends StatelessWidget {
   const ScoreCard({super.key});
@@ -89,7 +89,7 @@ class ScoreCard extends StatelessWidget {
                     children: [
                       SizedBox(height: 20.h),
                       // Progress Indicator
-                      AnimatedProgressIndicator(score: double.parse(state.score??"0"))
+                      CustomProgress(score: int.parse(state.score??"0"),)
                     ],
                   ),
                 ),

@@ -18,7 +18,7 @@ class CustomBottomNavBar extends StatelessWidget {
         var cubit = context.read<HomeCubit>();
         return Container(
           margin: EdgeInsets.only(
-              left: 20.w, right: 20.w, top: 10.h, bottom: 30.h),
+              left: 20.w, right: 20.w, top: 10.h, bottom: 20.h),
           child: Stack(
             alignment: Alignment.bottomCenter,
             clipBehavior: Clip.none,

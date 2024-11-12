@@ -7,4 +7,5 @@ class AppImages{
   static const String user= "assets/images/user-4.svg";
   static const String home= "assets/images/home-7.svg";
   static const String boy= "assets/images/boy@3x.png";
+  static const String profileImage= "assets/images/images-8@3x.png";
 }

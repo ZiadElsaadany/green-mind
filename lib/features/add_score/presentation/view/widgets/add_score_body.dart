@@ -13,6 +13,7 @@ import 'package:green_mind/features/home/presentation/view/widgets/nav_bar_widge
 import '../../../../../core/assets/colors.dart';
 import '../../../../../core/assets/styles.dart';
 import '../../../../../core/assets/texts.dart';
+import '../../../../../core/widgets/button_with_icon.dart';
 
 class AddScoreBody extends StatefulWidget {
   const AddScoreBody({super.key});
@@ -75,17 +76,21 @@ class _AddScoreBodyState extends State<AddScoreBody> {
                 ),
               ),
               83.verticalSpace,
-              StartButton(
+
+              AppButtonWithIcon(
+                icon: AppImages.tennis,
+                title: AppTexts.start ,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     context.pushNamed(Routes.home);
                   }
                 },
                 backgroundColor: state.score == null ||
-                        (state.score ?? "").trim()==""
+                    (state.score ?? "").trim()==""
                     ? AppColors.gray.withOpacity(0.3)
                     : AppColors.yellow,
-              )
+              ),
+
             ],
           ),
         );
@@ -94,34 +99,3 @@ class _AddScoreBodyState extends State<AddScoreBody> {
   }
 }
 
-class StartButton extends StatelessWidget {
-  const StartButton({super.key, this.onPressed, required this.backgroundColor});
-  final void Function()? onPressed;
-  final Color backgroundColor;
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-        style: TextButton.styleFrom(backgroundColor: backgroundColor),
-        onPressed: onPressed,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                AppImages.tennis,
-                height: 16.h,
-                width: 16.w,
-                colorFilter:
-                    const ColorFilter.mode(AppColors.black, BlendMode.srcIn),
-              ),
-              10.horizontalSpace,
-              Text(
-                AppTexts.start,
-                style: AppStyles.size18BlackColorBold,
-              )
-            ],
-          ),
-        ));
-  }
-}
